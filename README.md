@@ -8,4 +8,8 @@ Based on [this](http://richonrails.com/articles/google-authentication-in-ruby-on
 
   bundle install
 
-Add your own google client id and key in the initializer here:
+then
+
+  rake db:migrate
+
+Add your own google secret key base and clientId, etc in `/config/initializers/secret_token.rb` and `/config/initializers/omniauth.rb`
