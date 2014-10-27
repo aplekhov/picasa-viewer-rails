@@ -1,0 +1,17 @@
+%h2
+  Photos from "#{@album_title}"
+= link_to "View other albums", albums_path
+%table.table.table-bordered
+  %tr
+    %th.span4 Photo
+    %th.span8 Add Comment
+
+    - @photos.each do |photo|
+      %tr
+        %td 
+          = image_tag photo[:src]
+        %td 
+          = form_tag(add_comment_album_photo_path(id: photo[:id], album_id: params[:album_id]), remote: true) do |form|
+            = text_field_tag :comment, '', placeholder: 'Enter new comment here',  autocomplete: 'off', size: 75, class: 'span6'
+            = submit_tag 'Add Comment', autocomplete: 'off'
+            = image_tag('ajax-loader.gif', class: 'spinner', style: 'display:none')
