@@ -15,6 +15,7 @@ then
 Add your own google secret key base and clientId, etc in `/config/initializers/secret_token.rb` and `/config/initializers/omniauth.rb`
 
 Then 
+
     rails s
 
 You will be asked to login with your google account and then allowed to see all your albums, photos and comment on photos.
